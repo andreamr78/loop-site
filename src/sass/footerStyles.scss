@@ -1,0 +1,183 @@
+@use 'fonts';
+
+.card.footer-card{
+    background-color: black;
+    border-radius: 0%;
+    width: 100%;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    #bottom-row{
+        margin-top: -1.5%;
+    }
+
+    .col-1{
+        width: 50%;
+        padding: 15px;
+    
+
+        .brand-logo{
+            font-weight: bolder;
+            font-size: 24px;
+        }
+
+        
+        .nav-link-footer{
+            font-family: fonts.$first-font;
+            padding-bottom: 10px;
+            text-decoration: none;
+            transition: all .35s ease;
+            position: relative;
+            text-transform: none;
+            color: white;
+            font-weight: lighter;
+
+            &::before {
+                content: ""; 
+                position: absolute;
+                width: 30%;
+                height: 2px;
+                bottom: 0;
+                left: 36%;
+                transform: translate(-36%);
+                background-color: white;
+                visibility: hidden;
+                -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+                -webkit-transition: all 0.3s ease-in-out 0s; 
+                transition: all 0.3s ease-in-out 0s; 
+            }   
+
+            &:hover {
+                color: white;
+
+                &::before {
+                    visibility: visible;
+                    -webkit-transform: scaleX(1);
+                    transform: scaleX(1);
+                }   
+            } 
+        }
+
+}
+
+    .col-2{
+        display: flex;
+        justify-content: flex-end;
+        width: 50%;
+        padding: 15px;
+
+        &#socials-1{
+            display: inline-flex;
+        }
+        &#socials-2{
+            display: none;
+        }
+        
+        .nav-link-footer{
+            font-family: fonts.$first-font;
+            padding-bottom: 10px;
+            text-decoration: none;
+            transition: all .35s ease;
+            position: relative;
+            text-transform: none;
+            color: white;
+            font-weight: lighter;
+
+            &::before {
+                content: ""; 
+                position: absolute;
+                width: 30%;
+                height: 2px;
+                bottom: 0;
+                left: 36%;
+                transform: translate(-36%);
+                background-color: white;
+                visibility: hidden;
+                -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+                -webkit-transition: all 0.3s ease-in-out 0s; 
+                transition: all 0.3s ease-in-out 0s; 
+            }   
+
+            &:hover {
+                color: white;
+
+                &::before {
+                    visibility: visible;
+                    -webkit-transform: scaleX(1);
+                    transform: scaleX(1);
+                }   
+            } 
+        }
+
+        
+        #icon{
+            margin: 10px;
+        }
+
+        a#bottom-text{
+            color: rgb(171, 166, 166);
+            font-family: fonts.$first-font;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+
+    .card.footer-card{
+        width: auto;
+
+        #bottom-row{
+            margin-top: 0%;
+        }
+        .col-1{
+            width: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .brand-logo{
+                padding-left: 11px;
+                font-size: 30px;
+            }
+
+            &#bottom-row-col{
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+
+                .card-link{
+                  padding: 10px;
+
+                  &:first-child{
+                    margin-left: 15px;
+                  }
+                }
+            }
+
+        }
+
+        .col-2{
+            width: 100vh;
+
+            &#socials-1{
+                display: none;
+            }
+            &#socials-2{
+                display: inline-flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                
+            }
+
+            a#bottom-text{
+                margin-right: 15px;
+            }
+        }
+    }
+
+}
